@@ -4,14 +4,16 @@
             <span class="note__delete-icon">&times;</span>
         </a>
         <div class="note__content">
-            <a href="#!" class="note__title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, alias!</a>
-            <p class="note__body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi, amet.</p>
+            <a href="#!" class="note__title">{{note.title}}</a>
+            <p class="note__body">{{note.body}}</p>
         </div>
     </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["note"]
+};
 </script>
 
 <style lang="scss" scoped>
