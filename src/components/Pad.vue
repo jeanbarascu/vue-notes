@@ -1,6 +1,6 @@
 <template>
     <div class="pad">
-        <input type="text" class="pad__title" placeholder="Untitled note" v-model="note.title">
+        <input type="text" class="pad__title" placeholder="Untitled note" v-model="note.title" v-on:keydown="save">
         <textarea class="pad__text" placeholder="start writing ..." v-model="note.body"></textarea>
 
         <footer class="pad__footer">
@@ -13,10 +13,16 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 export default {
   computed: {
+    ...mapActions(["saveNote"]),
     ...mapGetters(["note"])
+  },
+  methods: {
+    save() {
+      this.saveNote;
+    }
   }
 };
 </script>
